@@ -1,0 +1,83 @@
+﻿<Page x:Class="ADO_LoginProject.MVVM.Views.SignUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ADO_LoginProject.MVVM.Views"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="670" d:DesignWidth="350"
+      Title="LoginPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="3.7*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!-- Brand Area -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Image Source="https://res.cloudinary.com/kysbv/image/upload/v1658898883/WolfTaxi/wolf_logo.png" Stretch="Uniform" Margin="10 0"></Image>
+            <StackPanel>
+                <Label Content="WolfTaxi" Foreground="Aqua" HorizontalAlignment="Center" FontFamily="Bauhaus 93" FontWeight="Bold" FontSize="45"></Label>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Input Area -->
+        <StackPanel Grid.Row="1" >
+            <TextBox Foreground="#edecef" Background="#38304c" Margin="10 30"  
+              Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="20"
+              Text="{Binding Username,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                materialDesign:HintAssist.Hint="Username" materialDesign:HintAssist.Background="#38304c" TextChanged="Username_TextChanged" Name="Username"/>
+
+            <TextBox Foreground="#edecef" Background="#38304c" Margin="10 30"  
+              Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="40"
+              Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                materialDesign:HintAssist.Hint="Email" materialDesign:HintAssist.Background="#38304c" TextChanged="Email_TextChanged" Name="Email"/>
+
+            <PasswordBox Foreground="#edecef" Background="#38304c" Margin="10 30" materialDesign:HintAssist.Hint="Password" MaxLength="20"
+                materialDesign:HintAssist.Background="#38304c" PasswordChanged="Password_PasswordChanged"  
+                Style="{StaticResource MaterialDesignOutlinedPasswordBox}" Name="Password"/>
+
+            <TextBox Foreground="#edecef" Background="#38304c" Margin="10 30 10 10"  
+              Style="{StaticResource MaterialDesignOutlinedTextBox}" MaxLength="10"
+              Text="{Binding Phone,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                materialDesign:HintAssist.Hint="Phone" materialDesign:HintAssist.Background="#38304c" TextChanged="Phone_TextChanged" Name="Phone"/>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+
+                <ToggleButton  Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="{Binding Remember,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Height="40" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="AccountCancel" RenderTransformOrigin=".5,.5">
+                        <materialDesign:PackIcon.RenderTransform>
+                            <RotateTransform Angle="45" />
+                        </materialDesign:PackIcon.RenderTransform>
+                    </materialDesign:PackIcon>
+                    <materialDesign:ToggleButtonAssist.OnContent>
+                        <materialDesign:PackIcon Kind="AccountCheck" />
+                    </materialDesign:ToggleButtonAssist.OnContent>
+                </ToggleButton>
+
+                <Label Content="Remember Me" Foreground="Aqua" FontSize="24" FontFamily="Segoe UI Black" FontWeight="DemiBold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <!--Password="{Binding Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"-->
+        <StackPanel Grid.Row="2" Orientation="Vertical">
+
+            <Button  Margin="10 10 10 0" Style="{StaticResource MaterialDesignPaperDarkButton}" Height="60" Background="Transparent" Command="{Binding SignUp}"
+             materialDesign:ButtonAssist.CornerRadius="25">
+                <Label Content="Sign Up" Foreground="Aqua" FontSize="28" FontFamily="Segoe UI Black" FontWeight="DemiBold"/>
+            </Button>
+
+
+            <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Label Content="Have an account ?" Foreground="#645c64" FontSize="20" VerticalAlignment="Center" FontFamily="Segoe UI Symbol" FontWeight="DemiBold" Margin="10 0"/>
+
+                <Button Content="Sign In" Foreground="#0ef5e3" VerticalAlignment="Center" FontSize="22" FontFamily="Segoe UI Black" FontWeight="DemiBold" Cursor="Hand" Background="Transparent" BorderThickness="0" Command="{Binding SignIn}" Height="40" />
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>

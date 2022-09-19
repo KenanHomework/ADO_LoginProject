@@ -1,0 +1,30 @@
+﻿<Application x:Class="ADO_LoginProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ADO_LoginProject"
+             StartupUri="mvvm\views\enterwindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Main_Color" Color="#201a30"></SolidColorBrush>
+                    <SolidColorBrush x:Key="Test_Color" Color="#ffff"></SolidColorBrush>
+                </ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+
+
+                <ResourceDictionary Source="Styles/ComboBoxItemStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ScrollBarStyle.xaml"/>
+                <ResourceDictionary Source="Styles/FontStyle.xaml"/>
+                <ResourceDictionary Source="Styles/TooltipStyle.xaml"/>
+                <ResourceDictionary Source="Styles/ToglebuttonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>

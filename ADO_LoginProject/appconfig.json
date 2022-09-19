@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "SqlServerConnection": "Data Source=ASUS-TUF-KENAN\\KENANSQL;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+  }
+}
